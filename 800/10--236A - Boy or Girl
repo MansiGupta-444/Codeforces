@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         
+        String word= sc.nextLine();
+
+       HashSet<Character> set = new HashSet<>();
+
+       for(int i =0;i<word.length();i++){
+        set.add(word.charAt(i));
+       }
+
+       System.out.println((set.size()%2==0 ? "CHAT WITH HER!":"IGNORE HIM!" ));
+       
+        sc.close();
+    }
+}
