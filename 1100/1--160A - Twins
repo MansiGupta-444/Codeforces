@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        Integer coins[] = new Integer[n];
+        int sum=0;
+        for(int i =0;i<n;i++){
+            coins[i]=sc.nextInt();
+            sum+=coins[i];
+        }
+        Arrays.sort(coins, Collections.reverseOrder());
+        
+        int sum2=0;
+        int count=0;
+        for(int i =0;i<n;i++){
+
+           sum2+=coins[i];
+           sum-=coins[i];
+           count++;
+           if(sum2>sum){
+            break;
+          }
+          
+        }
+       System.out.println(count);
+        sc.close();
+    }
+}
