@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        boolean levels[] = new boolean[n+1];
+
+        int p = sc.nextInt();
+
+        for (int i = 0; i < p; i++) {
+            int levelx = sc.nextInt();
+            levels[levelx]= true;
+       }
+
+       int q = sc.nextInt();
+
+        for (int i = 0; i < q; i++) {
+            int levely = sc.nextInt();
+            levels[levely]=true;
+       }
+
+       boolean canPass = true; 
+        for (int i = 1; i <=n; i++) {
+          if(!levels[i]){
+            canPass = false;
+                break;
+          }
+        }
+
+        if (canPass) {
+            System.out.println("I become the guy.");
+        } else {
+            System.out.println("Oh, my keyboard!");
+        }
+             
+        sc.close();
+    }
+}
